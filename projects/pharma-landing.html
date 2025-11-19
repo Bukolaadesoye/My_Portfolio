@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vitalia Pharma - Advancing Health Through Science</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Custom Font and Global Styles */
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      /* Custom blue palette for the brand */
+      .bg-vitalia-blue {
+        background-color: #0c4a6e;
+      }
+      .hover-bg-vitalia-dark {
+        background-color: #083344;
+      }
+      .text-vitalia-blue {
+        color: #0c4a6e;
+      }
+      .border-vitalia-blue {
+        border-color: #0c4a6e;
+      }
+      .bg-vitalia-light {
+        background-color: #f0f9ff;
+      }
+
+      /* Hero Section with subtle background graphic/pattern */
+      .hero-section {
+        background-color: #f0f9ff;
+        background-image: linear-gradient(
+            rgba(240, 249, 255, 0.072),
+            rgba(240, 249, 255, 0.9)
+          ),
+          url("https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .section-header {
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+      .section-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: #0c4a6e;
+        border-radius: 9999px;
+      }
+
+      /* Animation for elements */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      /* Mobile menu animation */
+      .mobile-menu {
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Stats counter animation */
+      .stats-counter {
+        transition: all 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-xl">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <a href="#" class="flex-shrink-0 flex items-center">
+            <!-- DNA Helix Icon (Mockup) -->
+            <svg
+              class="h-8 w-8 text-vitalia-blue"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 4.5l14 15M5 19.5l14-15" />
+              <path d="M10 4.5a5 5 0 010 10" />
+              <path d="M14 19.5a5 5 0 010-10" />
+            </svg>
+            <span class="ml-3 text-2xl font-extrabold text-gray-900"
+              >Vitalia <span class="text-vitalia-blue">Pharma</span></span
+            >
+          </a>
+
+          <!-- Desktop Navigation Links -->
+          <nav class="hidden md:flex space-x-10">
+            <a
+              href="#about"
+              class="text-gray-600 hover:text-vitalia-blue transition-colors font-medium"
+              >About</a
+            >
+            <a
+              href="#research"
+              class="text-gray-600 hover:text-vitalia-blue transition-colors font-medium"
+              >Research</a
+            >
+            <a
+              href="#pipeline"
+              class="text-gray-600 hover:text-vitalia-blue transition-colors font-medium"
+              >Pipeline</a
+            >
+            <a
+              href="#partnerships"
+              class="text-gray-600 hover:text-vitalia-blue transition-colors font-medium"
+              >Partnerships</a
+            >
+            <a
+              href="#careers"
+              class="text-gray-600 hover:text-vitalia-blue transition-colors font-medium"
+              >Careers</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-600 hover:text-vitalia-blue transition-colors font-medium"
+              >Contact</a
+            >
+          </nav>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-600 hover:text-vitalia-blue"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="mobile-menu hidden md:hidden py-4 border-t border-gray-200"
+        >
+          <div class="flex flex-col space-y-4">
+            <a
+              href="#about"
+              class="text-gray-600 hover:text-vitalia-blue transition-colors font-medium"
+              >About</a
+            >
+            <a
+              href="#research"
+              class="text-gray-600 hover:text-vitalia-blue transition-colors font-medium"
+              >Research</a
+            >
+            <a
+              href="#pipeline"
+              class="text-gray-600 hover:text-vitalia-blue transition-colors font-medium"
+              >Pipeline</a
+            >
+            <a
+              href="#partnerships"
+              class="text-gray-600 hover:text-vitalia-blue transition-colors font-medium"
+              >Partnerships</a
+            >
+            <a
+              href="#careers"
+              class="text-gray-600 hover:text-vitalia-blue transition-colors font-medium"
+              >Careers</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-600 hover:text-vitalia-blue transition-colors font-medium"
+              >Contact</a
+            >
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-vitalia-blue hover:bg-hover-bg-vitalia-dark transition-colors w-fit"
+              >Investor Relations</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-24 sm:py-32">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up"
+      >
+        <h2
+          class="text-5xl sm:text-7xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight"
+        >
+          Advancing <span class="text-vitalia-blue">Health</span>. Defining
+          Tomorrow.
+        </h2>
+        <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+          Vitalia Pharma is dedicated to the rigorous pursuit of novel
+          therapies, bringing life-changing treatments from the lab to patients
+          globally.
+        </p>
+        <div class="space-x-4">
+          <a
+            href="#research"
+            class="inline-flex items-center justify-center px-8 py-4 border-2 border-vitalia-blue text-base font-bold rounded-full shadow-lg text-white bg-vitalia-blue hover:bg-hover-bg-vitalia-dark transition-all transform hover:scale-105"
+          >
+            Explore R&D
+          </a>
+          <a
+            href="#pipeline"
+            class="inline-flex items-center justify-center px-8 py-4 border-2 border-vitalia-blue text-base font-bold rounded-full shadow-lg text-vitalia-blue bg-white hover:bg-blue-50 transition-all transform hover:scale-105"
+          >
+            View Our Pipeline
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="stats-counter">
+            <div
+              class="text-3xl md:text-4xl font-bold text-vitalia-blue"
+              id="drugs-counter"
+            >
+              0
+            </div>
+            <div class="text-gray-600 mt-2">Drug Candidates</div>
+          </div>
+          <div class="stats-counter">
+            <div
+              class="text-3xl md:text-4xl font-bold text-vitalia-blue"
+              id="trials-counter"
+            >
+              0
+            </div>
+            <div class="text-gray-600 mt-2">Clinical Trials</div>
+          </div>
+          <div class="stats-counter">
+            <div
+              class="text-3xl md:text-4xl font-bold text-vitalia-blue"
+              id="patients-counter"
+            >
+              0
+            </div>
+            <div class="text-gray-600 mt-2">Patients Enrolled</div>
+          </div>
+          <div class="stats-counter">
+            <div
+              class="text-3xl md:text-4xl font-bold text-vitalia-blue"
+              id="countries-counter"
+            >
+              0
+            </div>
+            <div class="text-gray-600 mt-2">Countries Served</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-vitalia-light">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span
+              class="text-sm font-semibold text-vitalia-blue uppercase tracking-wider"
+              >Our Mission</span
+            >
+            <h2
+              class="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6"
+            >
+              Pioneering Medical Innovation Since 2015
+            </h2>
+            <p class="text-lg text-gray-600 mb-6">
+              Founded by leading scientists from Harvard Medical School and MIT,
+              Vitalia Pharma emerged from a shared vision: to transform complex
+              biological discoveries into life-changing therapies for patients
+              with limited treatment options.
+            </p>
+            <p class="text-lg text-gray-600 mb-6">
+              Our interdisciplinary approach combines cutting-edge biotechnology
+              with computational science to accelerate drug discovery and
+              development.
+            </p>
+            <div
+              class="bg-white p-6 rounded-xl shadow-md border-l-4 border-vitalia-blue"
+            >
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Our Vision
+              </h3>
+              <p class="text-gray-600">
+                To become the world's most innovative biopharmaceutical company,
+                delivering breakthrough therapies that address unmet medical
+                needs.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <img
+              src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Laboratory research"
+              class="rounded-lg shadow-md h-48 w-full object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Scientific collaboration"
+              class="rounded-lg shadow-md h-48 w-full object-cover mt-8"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Drug development"
+              class="rounded-lg shadow-md h-48 w-full object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Medical innovation"
+              class="rounded-lg shadow-md h-48 w-full object-cover mt-8"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Pillars Section -->
+    <section id="research" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2
+          class="section-header text-3xl sm:text-4xl font-extrabold text-gray-900 mb-12"
+        >
+          Our Foundational Pillars
+        </h2>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+          <!-- Pillar 1: Research & Development -->
+          <div
+            class="group p-8 rounded-xl border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+          >
+            <svg
+              class="w-16 h-16 text-vitalia-blue mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z"
+              />
+            </svg>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Targeted R&D</h3>
+            <p class="text-gray-600 mb-4">
+              Focusing on complex diseases in oncology and neurology, our
+              state-of-the-art labs utilize cutting-edge genomics and AI-driven
+              drug discovery.
+            </p>
+            <ul class="text-left text-gray-600 text-sm space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-check text-vitalia-blue mt-1 mr-2"></i>
+                <span>AI-powered drug candidate screening</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-vitalia-blue mt-1 mr-2"></i>
+                <span>High-throughput genomic analysis</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-vitalia-blue mt-1 mr-2"></i>
+                <span>CRISPR gene editing capabilities</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pillar 2: Clinical Excellence -->
+          <div
+            class="group p-8 rounded-xl border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+          >
+            <svg
+              class="w-16 h-16 text-vitalia-blue mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7C4 4.79 7.582 3 12 3s8 1.79 8 4m0 5.5V13"
+              />
+            </svg>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">
+              Clinical Excellence
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Upholding the highest ethical standards in our clinical trials to
+              ensure patient safety and deliver robust, reliable scientific
+              data.
+            </p>
+            <ul class="text-left text-gray-600 text-sm space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-check text-vitalia-blue mt-1 mr-2"></i>
+                <span>Global clinical trial network</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-vitalia-blue mt-1 mr-2"></i>
+                <span>Real-world evidence integration</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-vitalia-blue mt-1 mr-2"></i>
+                <span>Patient-centric trial design</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pillar 3: Patient Access -->
+          <div
+            class="group p-8 rounded-xl border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+          >
+            <svg
+              class="w-16 h-16 text-vitalia-blue mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 11c0 3.866-3 7-3 7h6c0 0-3-3.134-3-7z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4a3 3 0 100 6 3 3 0 000-6z"
+              />
+            </svg>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Global Access</h3>
+            <p class="text-gray-600 mb-4">
+              Committed to making our innovative medicines accessible and
+              affordable to diverse patient populations around the world.
+            </p>
+            <ul class="text-left text-gray-600 text-sm space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-check text-vitalia-blue mt-1 mr-2"></i>
+                <span>Tiered pricing models</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-vitalia-blue mt-1 mr-2"></i>
+                <span>Patient assistance programs</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-vitalia-blue mt-1 mr-2"></i>
+                <span>Global regulatory expertise</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scientific Credibility / Quote Section -->
+    <section class="py-20 bg-gray-100">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <blockquote class="text-3xl font-light italic text-gray-800 mb-6">
+          "The next breakthrough in medicine is not just an opportunity; it is
+          an obligation to those waiting for a cure."
+        </blockquote>
+        <cite class="text-xl font-semibold text-vitalia-blue block mb-12">
+          — Dr. Helena Chen, Chief Scientific Officer
+        </cite>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-vitalia-blue">15+</div>
+            <div class="text-gray-600">Years Industry Experience</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-vitalia-blue">50+</div>
+            <div class="text-gray-600">Peer-Reviewed Publications</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-vitalia-blue">12</div>
+            <div class="text-gray-600">Patents Filed</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Focus Areas -->
+    <section id="pipeline" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="section-header text-3xl sm:text-4xl font-extrabold text-gray-900 mb-12 text-center"
+        >
+          Our Active Research Focus
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mb-12">
+          <!-- Focus Area 1: Oncology -->
+          <div
+            class="p-6 rounded-xl shadow-lg border border-vitalia-blue/20 flex flex-col justify-between"
+          >
+            <div>
+              <span
+                class="text-sm font-semibold text-red-600 uppercase tracking-wider"
+                >ONCOLOGY</span
+              >
+              <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-4">
+                Precision Immunotherapies
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Developing next-generation CAR T-cell therapies and personalized
+                cancer vaccines that harness the body's immune system to target
+                malignancies with unprecedented specificity.
+              </p>
+              <div class="bg-red-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-red-800 mb-2">Key Programs:</h4>
+                <ul class="text-sm text-red-700 space-y-1">
+                  <li>• VT-101: CAR-T for B-cell malignancies (Phase II)</li>
+                  <li>• VT-102: Personalized neoantigen vaccine (Phase I)</li>
+                  <li>• VT-103: Immune checkpoint modulator (Preclinical)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="text-sm text-gray-500 mt-4">
+              <span class="font-medium text-vitalia-blue"
+                >Pipeline Status:</span
+              >
+              3 candidates in Phase II trials.
+            </div>
+          </div>
+
+          <!-- Focus Area 2: Neurology -->
+          <div
+            class="p-6 rounded-xl shadow-lg border border-vitalia-blue/20 flex flex-col justify-between"
+          >
+            <div>
+              <span
+                class="text-sm font-semibold text-purple-600 uppercase tracking-wider"
+                >NEUROLOGY</span
+              >
+              <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-4">
+                Neurodegenerative Disease Modulation
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Investigating small molecules designed to slow or halt the
+                progression of Alzheimer's and Parkinson's diseases by targeting
+                specific protein aggregation pathways in the brain.
+              </p>
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-purple-800 mb-2">
+                  Key Programs:
+                </h4>
+                <ul class="text-sm text-purple-700 space-y-1">
+                  <li>• VT-201: Tau aggregation inhibitor (Phase I)</li>
+                  <li>• VT-202: Alpha-synuclein modulator (Preclinical)</li>
+                  <li>• VT-203: Neuroinflammation target (Discovery)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="text-sm text-gray-500 mt-4">
+              <span class="font-medium text-vitalia-blue"
+                >Pipeline Status:</span
+              >
+              1 candidate entering Phase I trials in Q3.
+            </div>
+          </div>
+        </div>
+
+        <!-- Pipeline Visualization -->
+        <div class="bg-vitalia-light p-8 rounded-xl">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Drug Development Pipeline
+          </h3>
+          <div class="flex flex-col space-y-4">
+            <div class="flex items-center">
+              <div class="w-1/5 text-sm font-medium text-gray-700">
+                Discovery
+              </div>
+              <div class="w-3/4 bg-gray-200 rounded-full h-4">
+                <div
+                  class="bg-green-500 h-4 rounded-full"
+                  style="width: 20%"
+                ></div>
+              </div>
+              <div class="w-1/12 text-sm text-gray-600 text-right">
+                2 programs
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-1/5 text-sm font-medium text-gray-700">
+                Preclinical
+              </div>
+              <div class="w-3/4 bg-gray-200 rounded-full h-4">
+                <div
+                  class="bg-blue-500 h-4 rounded-full"
+                  style="width: 40%"
+                ></div>
+              </div>
+              <div class="w-1/12 text-sm text-gray-600 text-right">
+                4 programs
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-1/5 text-sm font-medium text-gray-700">Phase I</div>
+              <div class="w-3/4 bg-gray-200 rounded-full h-4">
+                <div
+                  class="bg-yellow-500 h-4 rounded-full"
+                  style="width: 60%"
+                ></div>
+              </div>
+              <div class="w-1/12 text-sm text-gray-600 text-right">
+                3 programs
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-1/5 text-sm font-medium text-gray-700">
+                Phase II
+              </div>
+              <div class="w-3/4 bg-gray-200 rounded-full h-4">
+                <div
+                  class="bg-orange-500 h-4 rounded-full"
+                  style="width: 80%"
+                ></div>
+              </div>
+              <div class="w-1/12 text-sm text-gray-600 text-right">
+                3 programs
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-1/5 text-sm font-medium text-gray-700">
+                Phase III
+              </div>
+              <div class="w-3/4 bg-gray-200 rounded-full h-4">
+                <div
+                  class="bg-red-500 h-4 rounded-full"
+                  style="width: 10%"
+                ></div>
+              </div>
+              <div class="w-1/12 text-sm text-gray-600 text-right">
+                1 program
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section id="partnerships" class="py-20 bg-vitalia-light">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span
+            class="text-sm font-semibold text-vitalia-blue uppercase tracking-wider"
+            >Strategic Alliances</span
+          >
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900">
+            Collaborating for Global Impact
+          </h2>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center mb-12"
+        >
+          <div
+            class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-24"
+          >
+            <span class="text-xl font-bold text-gray-700">Harvard Medical</span>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-24"
+          >
+            <span class="text-xl font-bold text-gray-700">MIT</span>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-24"
+          >
+            <span class="text-xl font-bold text-gray-700">NIH</span>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-24"
+          >
+            <span class="text-xl font-bold text-gray-700">Stanford</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            Partnership Opportunities
+          </h3>
+          <p class="text-gray-600 mb-6">
+            We actively seek collaborations with academic institutions, research
+            organizations, and pharmaceutical companies to accelerate the
+            development of innovative therapies.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-vitalia-blue mb-2">
+                For Academic Partners
+              </h4>
+              <ul class="text-gray-600 text-sm space-y-1">
+                <li>• Joint research programs</li>
+                <li>• Technology licensing</li>
+                <li>• Postdoctoral fellowships</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-vitalia-blue mb-2">
+                For Industry Partners
+              </h4>
+              <ul class="text-gray-600 text-sm space-y-1">
+                <li>• Co-development agreements</li>
+                <li>• Licensing and commercialization</li>
+                <li>• Manufacturing partnerships</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6 text-center">
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-md text-white bg-vitalia-blue hover:bg-hover-bg-vitalia-dark transition-colors"
+            >
+              Explore Partnership Opportunities
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span
+            class="text-sm font-semibold text-vitalia-blue uppercase tracking-wider"
+            >Join Our Team</span
+          >
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900">
+            Build the Future of Medicine With Us
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-vitalia-light p-8 rounded-xl">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              Why Work at Vitalia?
+            </h3>
+            <ul class="text-gray-600 space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-flask text-vitalia-blue mt-1 mr-3"></i>
+                <span>Cutting-edge research with real-world impact</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-users text-vitalia-blue mt-1 mr-3"></i>
+                <span>Collaborative, interdisciplinary environment</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-graduation-cap text-vitalia-blue mt-1 mr-3"
+                ></i>
+                <span>Continuous learning and development opportunities</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-heartbeat text-vitalia-blue mt-1 mr-3"></i>
+                <span>Competitive compensation and benefits</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-vitalia-light p-8 rounded-xl">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              Current Openings
+            </h3>
+            <div class="space-y-4">
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h4 class="font-semibold text-gray-900">
+                  Senior Research Scientist - Oncology
+                </h4>
+                <p class="text-sm text-gray-600">Cambridge, MA • Full-time</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h4 class="font-semibold text-gray-900">
+                  Clinical Trial Manager
+                </h4>
+                <p class="text-sm text-gray-600">Remote • Full-time</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h4 class="font-semibold text-gray-900">
+                  Bioinformatics Specialist
+                </h4>
+                <p class="text-sm text-gray-600">Cambridge, MA • Full-time</p>
+              </div>
+            </div>
+            <div class="mt-6 text-center">
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center px-6 py-3 border border-vitalia-blue text-base font-medium rounded-full text-vitalia-blue bg-white hover:bg-vitalia-light transition-colors"
+              >
+                View All Open Positions
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-vitalia-blue">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+          Ready to Advance Medicine Together?
+        </h2>
+        <p class="text-xl text-blue-100 mb-8">
+          Whether you're an investor, research partner, or potential team
+          member, join us in our mission to transform patient lives.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center px-10 py-4 border-2 border-white text-lg font-bold rounded-full shadow-xl text-vitalia-blue bg-white hover:bg-blue-50 transition-all transform hover:scale-105"
+          >
+            Contact Us Today
+          </a>
+          <a
+            href="#"
+            class="inline-flex items-center justify-center px-10 py-4 border-2 border-white text-lg font-bold rounded-full shadow-xl text-white bg-transparent hover:bg-white hover:text-blue-900 transition-all transform hover:scale-105"
+          >
+            Download Corporate Overview
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-gray-800 text-white py-12">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8"
+      >
+        <!-- Column 1: Logo & Info -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center mb-4">
+            <span class="ml-2 text-2xl font-bold text-white"
+              >Vitalia <span class="text-vitalia-blue">Pharma</span></span
+            >
+          </div>
+          <p class="text-gray-400 text-sm mb-4">
+            Committed to science, focused on life.
+          </p>
+          <div class="mt-4 flex space-x-4">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="fab fa-linkedin-in text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="fab fa-facebook-f text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="fab fa-youtube text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-vitalia-blue">Company</h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#about"
+                class="text-gray-400 hover:text-white transition-colors"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#research"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Research</a
+              >
+            </li>
+            <li>
+              <a
+                href="#pipeline"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Pipeline</a
+              >
+            </li>
+            <li>
+              <a
+                href="#careers"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Careers</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Info -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-vitalia-blue">Connect</h4>
+          <p class="text-gray-400 flex items-start mb-2">
+            <i class="fas fa-envelope text-vitalia-blue mr-2 mt-1"></i>
+            ir@vitalia.com
+          </p>
+          <p class="text-gray-400 flex items-start mb-2">
+            <i class="fas fa-phone text-vitalia-blue mr-2 mt-1"></i>
+            (800) 555-TECH
+          </p>
+          <p class="text-gray-400 flex items-start">
+            <i class="fas fa-map-marker-alt text-vitalia-blue mr-2 mt-1"></i>
+            1200 Research Ave, Boston, MA 02115
+          </p>
+        </div>
+
+        <!-- Column 4: Legal & Policies -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-vitalia-blue">Legal</h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Terms of Use</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Ethics & Compliance</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Investor Relations</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div
+        class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm"
+      >
+        &copy; 2025 Vitalia Pharma. All rights reserved. Not for distribution in
+        all jurisdictions.
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu functionality
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      // Animate stats counters
+      function animateCounter(id, start, end, duration) {
+        let obj = document.getElementById(id);
+        let startTime = null;
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          const value = Math.floor(progress * (end - start) + start);
+          obj.innerHTML = value.toLocaleString();
+
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        }
+
+        window.requestAnimationFrame(step);
+      }
+
+      // Initialize counters when page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        // Animate stats after a short delay
+        setTimeout(() => {
+          animateCounter("drugs-counter", 0, 12, 2000);
+          animateCounter("trials-counter", 0, 9, 2000);
+          animateCounter("patients-counter", 0, 3500, 2000);
+          animateCounter("countries-counter", 0, 28, 2000);
+        }, 500);
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll("#mobile-menu a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.add("hidden");
+          });
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
