@@ -161,24 +161,28 @@
           <!-- Right: Title and Dynamic Text -->
           <div class="lg:col-span-2 text-left lg:text-left">
             <p class="text-xl sm:text-2xl text-gold font-semibold mb-4">
-              Hi, my name is Bukola.
+              Hey there, I'm Bukola 👋
             </p>
             <h1
               class="text-5xl sm:text-7xl font-extrabold tracking-tight mb-4 leading-tight"
             >
-              I build <span class="text-gold" id="dynamic-text"></span>.
+              I craft <span class="text-gold" id="dynamic-text"></span>
             </h1>
             <p class="text-xl text-gray-400 max-w-3xl mb-8">
-              A seasoned <strong> Full-Stack Developer</strong> specializing in
-              the <strong>Laravel/PHP</strong> and
-              <strong>Vue.js</strong> ecosystem, I transform complex business
-              logic into beautifully designed, scalable web applications.
+              A <strong>Full-Stack Developer</strong> who turns complex ideas
+              into <strong>high-performance web experiences</strong>.
+              Specializing in the powerful duo of
+              <strong>Laravel/PHP</strong> and <strong>Vue.js</strong>, I build
+              solutions that don't just work—they <strong>wow</strong>.
             </p>
             <a
               href="#projects"
-              class="inline-flex items-center justify-center px-6 py-3 border-2 border-gold text-base font-bold rounded-lg shadow-xl text-navy bg-gold hover:opacity-90 transition-all"
+              class="inline-flex items-center justify-center px-6 py-3 border-2 border-gold text-base font-bold rounded-lg shadow-xl text-navy bg-gold hover:scale-105 transform transition-all duration-300 group"
             >
-              View My Work
+              See the Magic
+              <span class="ml-2 group-hover:translate-x-1 transition-transform"
+                >✨</span
+              >
             </a>
           </div>
         </div>
@@ -186,43 +190,68 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 border-b border-gray-800">
+    <section
+      id="about"
+      class="py-20 border-b border-gray-800 bg-gradient-to-b from-navy to-navy-dark"
+    >
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-extrabold text-center mb-10">About Me</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <h2 class="text-4xl font-extrabold text-center mb-10">
+          The <span class="text-gold">Developer</span> Behind the Code
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Detailed Bio -->
-          <div>
-            <p class="text-gray-400 mb-4 leading-relaxed">
-              With over 3 years of experience, my core expertise lies in
-              architecting and deploying
-              <strong>Enterprise-grade web solutions</strong>
-              using the robust combination of <strong>Laravel (PHP)</strong> on
-              the backend and modern <strong>Vue.js</strong> (including
-              <strong>Vuex</strong>) for state Management on the frontend. I
-              have a deep commitment to code quality, automated testing, and
-              performance optimization.
-            </p>
-            <p class="text-gray-400 mb-6 leading-relaxed">
-              I am proficient in leveraging <strong>Tailwind CSS</strong> and
-              <strong>Bootstrap</strong>
-              to deliver pixel-perfect, mobile-first UIs. My database skills
-              cover both relational (MySQL, PostgreSQL, SQLite) and
-              object-relational mapping (TypeORM, Eloquent), ensuring data
-              integrity and efficient querying for complex data structures.
-            </p>
-            <a href="#contact" class="text-gold font-semibold hover:underline"
-              >Let's connect and build something incredible →</a
+          <div class="space-y-6">
+            <div class="bg-gray-800/50 p-6 rounded-xl border-l-4 border-gold">
+              <p class="text-gray-300 leading-relaxed">
+                With <strong>3+ years</strong> in the trenches, I architect and
+                launch <strong>enterprise-grade solutions</strong> that scale.
+                My playground? The powerful combination of
+                <strong>Laravel (PHP)</strong> for rock-solid backends and
+                <strong>Vue.js</strong> for buttery-smooth frontends.
+              </p>
+            </div>
+
+            <div class="bg-gray-800/50 p-6 rounded-xl">
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                I'm obsessed with <strong>clean code</strong>,
+                <strong>lightning-fast performance</strong>, and
+                <strong>pixel-perfect UI/UX</strong>. When I'm not crafting
+                beautiful interfaces with <strong>Tailwind CSS</strong> and
+                <strong>Bootstrap</strong>, I'm optimizing databases (<strong
+                  >MySQL, PostgreSQL</strong
+                >) and building robust APIs.
+              </p>
+              <p class="text-gray-300 leading-relaxed">
+                From concept to deployment, I ensure every project is
+                <strong>bulletproof, scalable, and delightful to use</strong>.
+              </p>
+            </div>
+
+            <a
+              href="#contact"
+              class="inline-flex items-center text-gold font-semibold hover:text-gold-light transition-colors group"
             >
+              Ready to build something extraordinary?
+              <span class="ml-2 group-hover:translate-x-2 transition-transform"
+                >🚀</span
+              >
+            </a>
           </div>
 
           <!-- Image Placeholder for Context -->
-
           <div class="hidden lg:flex justify-center">
-            <img
-              src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              alt="Modern Development Environment"
-              class="rounded-xl shadow-2xl border-2 border-gold/50"
-            />
+            <div class="relative">
+              <img
+                src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Modern Development Environment"
+                class="rounded-xl shadow-2xl border-2 border-gold/50 transform hover:scale-105 transition-transform duration-300"
+              />
+              <div
+                class="absolute -bottom-4 -right-4 bg-gold text-navy px-4 py-2 rounded-lg font-bold shadow-lg"
+              >
+                Code • Create • Innovate
+              </div>
+            </div>
           </div>
         </div>
       </div>
