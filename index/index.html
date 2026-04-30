@@ -34,7 +34,7 @@
         background-color: #0d284a;
       } /* Slightly lighter navy for components */
       .skill-card {
-        width: 150px;
+        width: 100%;
         font-weight: bold;
       }
 
@@ -43,6 +43,18 @@
 
         display: block;
         margin-bottom: 10px;
+      }
+
+      /* Mobile menu transitions */
+      #mobile-menu {
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+      }
+      #mobile-menu.open {
+        max-height: 400px;
+        opacity: 1;
       }
       /* Hero Image/Background Style (Using a textured placeholder) */
       .hero-bg {
@@ -100,8 +112,8 @@
         <div class="flex justify-between items-center h-16">
           <!-- Logo/Name -->
           <a href="#" class="flex-shrink-0 flex items-center">
-            <span class="text-3xl font-extrabold text-white"
-              >Bukola<span class="text-gold ms-2">Adesoye</span></span
+            <span class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white"
+              >Bukola<span class="text-gold ms-1 sm:ms-2">Adesoye</span></span
             >
           </a>
 
@@ -136,39 +148,83 @@
           >
             Download CV
           </a>
+
+          <!-- Mobile menu toggle -->
+          <button
+            id="mobile-menu-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gold hover:bg-gold/10 transition-colors"
+          >
+            <i id="mobile-menu-icon" class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Mobile menu panel -->
+        <div id="mobile-menu" class="md:hidden">
+          <nav class="flex flex-col space-y-1 pb-4 pt-2">
+            <a
+              href="#about"
+              class="mobile-nav-link block px-3 py-2 rounded-md text-gray-300 hover:text-gold hover:bg-gold/10 font-medium transition-colors"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="mobile-nav-link block px-3 py-2 rounded-md text-gray-300 hover:text-gold hover:bg-gold/10 font-medium transition-colors"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="mobile-nav-link block px-3 py-2 rounded-md text-gray-300 hover:text-gold hover:bg-gold/10 font-medium transition-colors"
+              >Projects</a
+            >
+            <a
+              href="#contact"
+              class="mobile-nav-link block px-3 py-2 rounded-md text-gray-300 hover:text-gold hover:bg-gold/10 font-medium transition-colors"
+              >Contact</a
+            >
+            <a
+              href="../assets/images/Bukola_Adesoye_cv.pdf"
+              class="mobile-nav-link mt-2 inline-flex items-center justify-center px-4 py-2 border border-gold text-sm font-bold rounded-full text-gold hover:bg-gold hover:text-navy transition-colors"
+            >
+              Download CV
+            </a>
+          </nav>
         </div>
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-bg py-32 sm:py-48 flex items-center justify-center">
+    <section class="hero-bg py-16 sm:py-24 lg:py-48 flex items-center justify-center">
       <div class="hero-overlay absolute inset-0"></div>
       <div
         class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
       >
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 items-center">
           <!-- Left: Profile Image Placeholder -->
           <div class="lg:col-span-1 flex justify-center lg:justify-end">
             <!-- Placeholder for professional image with rounded frame -->
             <img
               src="../assets/images/Screenshot 2025-08-21 at 5.03.27 AM.png"
               alt="Professional Profile Photo"
-              class="w-48 h-48 rounded-full border-4 border-gold shadow-2xl object-cover"
+              class="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full border-4 border-gold shadow-2xl object-cover"
               onerror="this.onerror=null;this.src='https://placehold.co/200x200/FFC300/0A192F?text=O.K.'"
             />
           </div>
 
           <!-- Right: Title and Dynamic Text -->
-          <div class="lg:col-span-2 text-left lg:text-left">
-            <p class="text-xl sm:text-2xl text-gold font-semibold mb-4">
+          <div class="lg:col-span-2 text-center lg:text-left">
+            <p class="text-base sm:text-xl lg:text-2xl text-gold font-semibold mb-3 sm:mb-4">
               Hey there, I'm Bukola 👋
             </p>
             <h1
-              class="text-5xl sm:text-7xl font-extrabold tracking-tight mb-4 leading-tight"
+              class="text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-4 leading-tight"
             >
               I craft <span class="text-gold" id="dynamic-text"></span>
             </h1>
-            <p class="text-xl text-gray-400 max-w-3xl mb-8">
+            <p class="text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-8">
               A <strong>Full-Stack Developer</strong> who turns complex ideas
               into <strong>high-performance web experiences</strong>.
               Specializing in the powerful duo of
@@ -177,7 +233,7 @@
             </p>
             <a
               href="#projects"
-              class="inline-flex items-center justify-center px-6 py-3 border-2 border-gold text-base font-bold rounded-lg shadow-xl text-navy bg-gold hover:scale-105 transform transition-all duration-300 group"
+              class="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 border-2 border-gold text-sm sm:text-base font-bold rounded-lg shadow-xl text-navy bg-gold hover:scale-105 transform transition-all duration-300 group"
             >
               See the Magic
               <span class="ml-2 group-hover:translate-x-1 transition-transform"
@@ -192,16 +248,16 @@
     <!-- About Section -->
     <section
       id="about"
-      class="py-20 border-b border-gray-800 bg-gradient-to-b from-navy to-navy-dark"
+      class="py-12 sm:py-20 border-b border-gray-800 bg-gradient-to-b from-navy to-navy-dark"
     >
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-extrabold text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-center mb-8 sm:mb-10">
           The <span class="text-gold">Developer</span> Behind the Code
         </h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <!-- Detailed Bio -->
           <div class="space-y-6">
-            <div class="bg-gray-800/50 p-6 rounded-xl border-l-4 border-gold">
+            <div class="bg-gray-800/50 p-5 sm:p-6 rounded-xl border-l-4 border-gold">
               <p class="text-gray-300 leading-relaxed">
                 With <strong>3+ years</strong> in the trenches, I architect and
                 launch <strong>enterprise-grade solutions</strong> that scale.
@@ -260,30 +316,30 @@
     <!-- Skills/Stack Section -->
     <section
       id="skills"
-      class="py-20 border-b border-gray-800 bg-gradient-to-br from-navy to-navy-dark"
+      class="py-12 sm:py-20 border-b border-gray-800 bg-gradient-to-br from-navy to-navy-dark"
     >
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-extrabold text-center mb-16">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-center mb-10 sm:mb-16">
           My <span class="text-gold">Tech Stack</span>
         </h2>
 
-        <div class="space-y-12">
+        <div class="space-y-8 sm:space-y-12">
           <!-- Group 1: Frontend -->
           <div
-            class="p-8 rounded-2xl border border-gold/20 bg-gray-800/30 backdrop-blur-sm hover:border-gold/40 transition-all duration-300"
+            class="p-4 sm:p-6 lg:p-8 rounded-2xl border border-gold/20 bg-gray-800/30 backdrop-blur-sm hover:border-gold/40 transition-all duration-300"
           >
             <h3
-              class="text-2xl font-bold text-white mb-8 border-b border-gold/30 pb-4 flex items-center"
+              class="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-6 sm:mb-8 border-b border-gold/30 pb-3 sm:pb-4 flex items-center"
             >
               <span class="text-gold mr-3">🎨</span>
               Frontend Magic
             </h3>
             <div
-              class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6"
+              class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3 sm:gap-4 md:gap-6"
             >
               <!-- HTML -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-orange-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-orange-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fab fa-html5 text-orange-500 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -295,7 +351,7 @@
               </div>
               <!-- CSS -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-blue-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-blue-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fab fa-css3-alt text-blue-500 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -307,7 +363,7 @@
               </div>
               <!-- JavaScript -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-yellow-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-yellow-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fab fa-js text-yellow-500 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -319,7 +375,7 @@
               </div>
               <!-- Vue.js -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-green-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-green-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fab fa-vuejs text-green-500 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -331,7 +387,7 @@
               </div>
               <!-- Vuex -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-green-700/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-green-700/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <svg
                   class="w-6 h-6 text-green-600 mb-2 group-hover:scale-110 transition-transform"
@@ -351,7 +407,7 @@
               </div>
               <!-- Tailwind CSS -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-teal-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-teal-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <svg
                   class="w-6 h-6 text-teal-400 mb-2 group-hover:scale-110 transition-transform"
@@ -372,7 +428,7 @@
               </div>
               <!-- Bootstrap -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-purple-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-purple-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fab fa-bootstrap text-purple-500 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -387,20 +443,20 @@
 
           <!-- Group 2: Backend & Logic -->
           <div
-            class="p-8 rounded-2xl border border-gold/20 bg-gray-800/30 backdrop-blur-sm hover:border-gold/40 transition-all duration-300"
+            class="p-4 sm:p-6 lg:p-8 rounded-2xl border border-gold/20 bg-gray-800/30 backdrop-blur-sm hover:border-gold/40 transition-all duration-300"
           >
             <h3
-              class="text-2xl font-bold text-white mb-8 border-b border-gold/30 pb-4 flex items-center"
+              class="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-6 sm:mb-8 border-b border-gold/30 pb-3 sm:pb-4 flex items-center"
             >
               <span class="text-gold mr-3">⚡</span>
               Backend Powerhouse
             </h3>
             <div
-              class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6"
+              class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3 sm:gap-4 md:gap-6"
             >
               <!-- PHP -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-purple-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-purple-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fab fa-php text-purple-500 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -412,7 +468,7 @@
               </div>
               <!-- Laravel -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-red-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-red-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fab fa-laravel text-red-500 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -424,7 +480,7 @@
               </div>
               <!-- RESTful APIs -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-yellow-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-yellow-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fas fa-code text-yellow-500 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -439,20 +495,20 @@
 
           <!-- Group 3: Database & Infrastructure -->
           <div
-            class="p-8 rounded-2xl border border-gold/20 bg-gray-800/30 backdrop-blur-sm hover:border-gold/40 transition-all duration-300"
+            class="p-4 sm:p-6 lg:p-8 rounded-2xl border border-gold/20 bg-gray-800/30 backdrop-blur-sm hover:border-gold/40 transition-all duration-300"
           >
             <h3
-              class="text-2xl font-bold text-white mb-8 border-b border-gold/30 pb-4 flex items-center"
+              class="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-6 sm:mb-8 border-b border-gold/30 pb-3 sm:pb-4 flex items-center"
             >
               <span class="text-gold mr-3">🗄️</span>
               Data & Deployment
             </h3>
             <div
-              class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6"
+              class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3 sm:gap-4 md:gap-6"
             >
               <!-- MySQL -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-blue-800/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-blue-800/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fas fa-database text-blue-600 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -464,7 +520,7 @@
               </div>
               <!-- PostgreSQL -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-blue-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-blue-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fas fa-th-large text-blue-400 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -476,7 +532,7 @@
               </div>
               <!-- SQLite -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-blue-300/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-blue-300/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fas fa-th-list text-blue-300 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -488,7 +544,7 @@
               </div>
               <!-- Git -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-gray-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-gray-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fab fa-github text-gray-300 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -501,7 +557,7 @@
               <!-- Netlify -->
               <!-- Netlify with FA icon -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-teal-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-teal-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <i
                   class="fas fa-cloud text-teal-400 text-2xl mb-2 group-hover:scale-110 transition-transform"
@@ -513,7 +569,7 @@
               </div>
               <!-- cPanel -->
               <div
-                class="flex flex-col items-center p-4 rounded-xl hover:bg-orange-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
+                class="flex flex-col items-center p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-orange-500/10 hover:scale-105 transform transition-all duration-300 skill-card group"
               >
                 <svg
                   class="w-6 h-6 text-orange-500 mb-2 group-hover:scale-110 transition-transform"
@@ -535,14 +591,14 @@
 
         <!-- Call to Action -->
         <div
-          class="text-center mt-16 p-8 rounded-2xl bg-gold/10 border border-gold/20"
+          class="text-center mt-10 sm:mt-16 p-5 sm:p-8 rounded-2xl bg-gold/10 border border-gold/20"
         >
-          <p class="text-xl text-gray-300 mb-4">
+          <p class="text-base sm:text-lg lg:text-xl text-gray-300 mb-4">
             Ready to deploy your next project with modern hosting solutions?
           </p>
           <a
             href="#contact"
-            class="inline-flex items-center px-8 py-4 bg-gold text-navy font-bold rounded-xl hover:scale-105 transform transition-all duration-300 shadow-lg"
+            class="inline-flex items-center px-5 sm:px-8 py-3 sm:py-4 bg-gold text-navy text-sm sm:text-base font-bold rounded-xl hover:scale-105 transform transition-all duration-300 shadow-lg"
           >
             Let's Build & Deploy
             <span class="ml-2">🚀</span>
@@ -552,19 +608,19 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 border-b border-gray-800">
+    <section id="projects" class="py-12 sm:py-20 border-b border-gray-800">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-extrabold text-center mb-16">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-center mb-10 sm:mb-16">
           Featured Projects
         </h2>
 
-        <div class="space-y-16">
+        <div class="space-y-10 sm:space-y-16">
           <!-- Project 1: Enterprise CRM Platform -->
           <div
-            class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center project-card bg-accent rounded-xl p-6"
+            class="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-10 items-center project-card bg-accent rounded-xl p-4 sm:p-6"
           >
             <div class="lg:col-span-3 order-2 lg:order-1">
-              <h3 class="text-3xl font-bold text-white mb-2">
+              <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
                 AgriNova Farms - Sustainable Agriculture Solutions
               </h3>
               <p class="text-gray-400 mb-4">
@@ -599,28 +655,28 @@
             </div>
             <div class="lg:col-span-2 order-1 lg:order-2">
               <img
-                src="../assets/images/agro.png"
-                alt="CRM Project Screenshot"
-                class="rounded-lg shadow-2xl border-2 border-gold/50"
-                onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFC300/0A192F?text=CRM+Dashboard+Mockup'"
+                src="../assets/images/agric-1.avif"
+                alt="AgriNova Farms Screenshot"
+                class="rounded-lg shadow-2xl border-2 border-gold/50 w-full"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFC300/0A192F?text=AgriNova+Farms'"
               />
             </div>
           </div>
 
           <!-- Project 2: E-Learning Management System (Reversed Layout) -->
           <div
-            class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center project-card bg-accent rounded-xl p-6"
+            class="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-10 items-center project-card bg-accent rounded-xl p-4 sm:p-6"
           >
             <div class="lg:col-span-2">
               <img
                 src="../assets/images/vitalia.png"
-                alt="LMS Project Screenshot"
-                class="rounded-lg shadow-2xl border-2 border-gold/50"
-                onerror="this.onerror=null;this.src='https://placehold.co/600x400/0A192F/FFC300?text=LMS+Course+View'"
+                alt="Vitalia Pharma Screenshot"
+                class="rounded-lg shadow-2xl border-2 border-gold/50 w-full"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x400/0A192F/FFC300?text=Vitalia+Pharma'"
               />
             </div>
             <div class="lg:col-span-3">
-              <h3 class="text-3xl font-bold text-white mb-2">
+              <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
                 Vitalia - Pharma Landing page
               </h3>
               <p class="text-gray-400 mb-4">
@@ -659,10 +715,10 @@
 
           <!-- More projects can be added similarly -->
           <div
-            class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center project-card bg-accent rounded-xl p-6"
+            class="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-10 items-center project-card bg-accent rounded-xl p-4 sm:p-6"
           >
             <div class="lg:col-span-3 order-2 lg:order-1">
-              <h3 class="text-3xl font-bold text-white mb-2">
+              <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
                 BlogApp - Your Personal Publishing Platform
               </h3>
               <p class="text-gray-400 mb-4">
@@ -697,7 +753,7 @@
               <img
                 src="../assets/images/blog-app.png"
                 alt="Visualization Project Screenshot"
-                class="rounded-lg shadow-2xl border-2 border-gold/50"
+                class="rounded-lg shadow-2xl border-2 border-gold/50 w-full"
                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFC300/0A192F?text=Data+Visualization+Charts'"
               />
             </div>
@@ -705,10 +761,10 @@
 
           <!-- Project 3: Real-Time Data Visualization -->
           <div
-            class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center project-card bg-accent rounded-xl p-6"
+            class="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-10 items-center project-card bg-accent rounded-xl p-4 sm:p-6"
           >
             <div class="lg:col-span-3 order-2 lg:order-1">
-              <h3 class="text-3xl font-bold text-white mb-2">
+              <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
                 TaskMaster - Your Ultimate Todo App
               </h3>
               <p class="text-gray-400 mb-4">
@@ -744,7 +800,7 @@
               <img
                 src="../assets/images/todo.png"
                 alt="Visualization Project Screenshot"
-                class="rounded-lg shadow-2xl border-2 border-gold/50"
+                class="rounded-lg shadow-2xl border-2 border-gold/50 w-full"
                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFC300/0A192F?text=Data+Visualization+Charts'"
               />
             </div>
@@ -826,45 +882,45 @@
         </div>
       </div>
     </section> -->
-    <section id="contact" class="py-20 bg-gradient-to-b from-navy-dark to-navy">
+    <section id="contact" class="py-12 sm:py-20 bg-gradient-to-b from-navy-dark to-navy">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-extrabold text-center mb-4">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-center mb-3 sm:mb-4">
           Let's <span class="text-gold">Connect</span>
         </h2>
-        <p class="text-xl text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+        <p class="text-base sm:text-lg lg:text-xl text-gray-400 text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
           Ready to bring your next project to life? Let's discuss how we can
           work together to create something amazing.
         </p>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
           <!-- Contact Info -->
-          <div class="lg:col-span-1 space-y-8">
+          <div class="lg:col-span-1 space-y-6 sm:space-y-8">
             <div class="text-center lg:text-left">
               <h3
-                class="text-2xl font-bold text-white mb-6 flex items-center justify-center lg:justify-start"
+                class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center justify-center lg:justify-start"
               >
                 <span class="text-gold mr-3">💬</span>
                 Get In Touch
               </h3>
-              <p class="text-gray-400 mb-8">
+              <p class="text-sm sm:text-base text-gray-400 mb-6 sm:mb-8">
                 I'm always open to discussing new opportunities, creative
                 projects, or potential collaborations.
               </p>
             </div>
 
             <!-- Contact Methods -->
-            <div class="space-y-8">
+            <div class="space-y-4 sm:space-y-6">
               <div
-                class="flex items-center space-x-2 p-4 rounded-xl bg-gray-800/50 hover:bg-gray-800/70 transition-colors"
+                class="flex items-center space-x-3 p-3 sm:p-4 rounded-xl bg-gray-800/50 hover:bg-gray-800/70 transition-colors"
               >
                 <div
-                  class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center"
+                  class="w-10 h-10 sm:w-12 sm:h-12 bg-gold/20 rounded-lg flex items-center justify-center flex-shrink-0"
                 >
-                  <i class="fas fa-envelope text-gold text-xl"></i>
+                  <i class="fas fa-envelope text-gold text-lg sm:text-xl"></i>
                 </div>
-                <div>
-                  <p class="text-sm text-gray-400">Email</p>
-                  <p class="text-white text-xs font-medium">
+                <div class="min-w-0 flex-1">
+                  <p class="text-xs sm:text-sm text-gray-400">Email</p>
+                  <p class="text-white text-xs sm:text-sm font-medium break-all">
                     kadebukolaadesoye@gmail.com
                   </p>
                 </div>
@@ -872,16 +928,16 @@
 
               <a
                 href="https://github.com/Bukolaadesoye"
-                class="flex items-center space-x-4 p-4 rounded-xl bg-gray-800/50 hover:bg-gray-800/70 transition-colors"
+                class="flex items-center space-x-3 p-3 sm:p-4 rounded-xl bg-gray-800/50 hover:bg-gray-800/70 transition-colors"
               >
                 <div
-                  class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center"
+                  class="w-10 h-10 sm:w-12 sm:h-12 bg-gold/20 rounded-lg flex items-center justify-center flex-shrink-0"
                 >
-                  <i class="fab fa-github text-gold text-xl"></i>
+                  <i class="fab fa-github text-gold text-lg sm:text-xl"></i>
                 </div>
                 <div>
-                  <p class="text-sm text-gray-400">GitHub</p>
-                  <p class="text-white font-medium">Bukolaadesoye</p>
+                  <p class="text-xs sm:text-sm text-gray-400">GitHub</p>
+                  <p class="text-white text-sm sm:text-base font-medium">Bukolaadesoye</p>
                 </div>
               </a>
             </div>
@@ -891,7 +947,7 @@
           <div class="lg:col-span-2">
             <form
               id="contactForm"
-              class="space-y-6 p-8 rounded-2xl bg-gray-800/30 backdrop-blur-sm border border-gold/20"
+              class="space-y-5 sm:space-y-6 p-5 sm:p-8 rounded-2xl bg-gray-800/30 backdrop-blur-sm border border-gold/20"
               name="contact"
               method="POST"
               data-netlify="true"
@@ -1031,6 +1087,40 @@
         </p>
       </div>
     </footer>
+
+    <!-- Mobile menu toggle -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleBtn = document.getElementById("mobile-menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        const icon = document.getElementById("mobile-menu-icon");
+
+        if (toggleBtn && menu) {
+          const closeMenu = () => {
+            menu.classList.remove("open");
+            toggleBtn.setAttribute("aria-expanded", "false");
+            if (icon) {
+              icon.classList.remove("fa-times");
+              icon.classList.add("fa-bars");
+            }
+          };
+
+          toggleBtn.addEventListener("click", () => {
+            const isOpen = menu.classList.toggle("open");
+            toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            if (icon) {
+              icon.classList.toggle("fa-bars", !isOpen);
+              icon.classList.toggle("fa-times", isOpen);
+            }
+          });
+
+          // Close menu when a nav link is tapped
+          document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+          });
+        }
+      });
+    </script>
 
     <!-- JavaScript for Dynamic Typing Effect in Hero -->
     <script>
